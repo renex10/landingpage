@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +18,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+//categoria controller
+
+Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
+
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        $users = User::all();
+
+        return view('dashboard',compact('users'));
+    })->name('dashboard');
 });
