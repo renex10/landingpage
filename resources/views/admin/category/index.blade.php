@@ -10,29 +10,84 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
-                <table class="table table-dark">
+
+
+                <div class="col-md-8">
+                    <div class="card">
+
+           @if(session('success'))
+                      <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>{{session('success')}}</strong> 
+                      </div>
+            @endif
+
+                        <div class="card-header">Todas las Categorias</div>
+
+
+                 <table class="table table-dark">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">nombre</th>
-                        <th scope="col">apellido</th>
-                        <th scope="col">correo</th>
+                        <th scope="col">nombre de la categoria</th>
+                        <th scope="col">usuario</th>
+                        <th scope="col">creado</th>
                       </tr>
                     </thead>
                     <tbody>
-                      
+                     {{--  @php($i = 1) --}}
+                      @foreach ($categories as $category )
+                          
+                    
                       <tr>
                         
                             
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <th scope="row">{{$categories->firstItem()+$loop->index}}</th>
+                        <td>{{$category->category_name}}</td>
+                        <td>{{$category->user->name}}</td>
+                        <td>
+                          @if($category->created_at == NULL)
+                          <span class="text-danger">no hay datos en la base de datos</span>
+                          @else
+                          {{$category->created_at->diffForHumans()}}
+                          @endif
+                        </td>
                      
                       </tr>
-              
+                      @endforeach
+
                     </tbody>
+
+           
                   </table>
+                  {{$categories->links()}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        Agregar Categoria
+                    </div>
+                    <div class="card-body">
+
+                    
+
+                    <form action="{{route('store.category')}}" method="POST">
+                      @csrf
+                        <div class="form-group">
+                          <label for="email">Nombre de Categoria</label>
+                          <input type="text" name="category_name" class="form-control" placeholder="ingrese categoria" id="email">
+                          @error('category_name')
+                          <span class="text-danger">{{$message}}</span>
+
+                          @enderror
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Agregar Categoria</button>
+                      </form>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
         
