@@ -55,4 +55,11 @@ class CategoryController extends Controller
       return redirect()->back()->with('success','categoria insertada con exito!!!');
 
     }
+
+
+
+    public function  Edit($id){
+         $categories = Category::find($id);
+         return view('admin.category/edit',compact('categories'));
+    }
 }

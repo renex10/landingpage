@@ -32,6 +32,7 @@
                         <th scope="col">nombre de la categoria</th>
                         <th scope="col">usuario</th>
                         <th scope="col">creado</th>
+                        <th scope="col">accion</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -52,6 +53,10 @@
                           {{$category->created_at->diffForHumans()}}
                           @endif
                         </td>
+                        <td>
+                    <a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">editar</a>
+                    <a href="" class="btn btn-danger">eliminar</a>
+                  </td>
                      
                       </tr>
                       @endforeach
