@@ -62,4 +62,13 @@ class CategoryController extends Controller
          $categories = Category::find($id);
          return view('admin.category/edit',compact('categories'));
     }
+
+    public function Update(Request $request,$id){
+        $update = Category::find($id)->Update([
+           // 'category_name' => $request->category_name;
+        ]);
+
+        return $update;
+
+    }
 }

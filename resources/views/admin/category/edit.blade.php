@@ -21,7 +21,7 @@
 
                     
 
-                    <form action="" method="POST">
+                    <form action="{{url('category/update/'.$categories->id)}}" method="POST">
                       @csrf
                         <div class="form-group">
                           <label for="email">actulizar nombre de la Categoria</label>
