@@ -13,8 +13,9 @@ class CategoryController extends Controller
 {
     public function AllCat(){
         $categories =  Category::latest()->paginate(5);
+        $trachCat = Category::onlyTrashed()->latest()->paginate(3);
        /*  return $categories; */
-        return view('admin.category.index',compact('categories'));
+        return view('admin.category.index',compact('categories','trachCat'));
     }
 
     public function AddCat(Request $request){
@@ -63,12 +64,15 @@ class CategoryController extends Controller
          return view('admin.category/edit',compact('categories'));
     }
 
-    public function Update(Request $request,$id){
-        $update = Category::find($id)->Update([
-           // 'category_name' => $request->category_name;
+    public function Update(Request $request, $id ){
+       $update = Category::find($id)->Update([
+           'category_name' => $request->category_name,
+           'user_id' =>Auth::user()->id       
         ]);
-
-        return $update;
+        return redirect()->route('all.category')->with('exito','categoria actualizada');
+      // $id->category_name= $request->category_name;
+       
+       //return redirect ()->route('all.category');
 
     }
 }

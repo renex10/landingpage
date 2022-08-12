@@ -95,6 +95,84 @@
             </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="container">
+          <div class="row">
+
+
+              <div class="col-md-8">
+                  <div class="card">
+
         
+
+                      <div class="card-header">Lista de Basura</div>
+
+
+               <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">nombre de la categoria</th>
+                      <th scope="col">usuario</th>
+                      <th scope="col">creado</th>
+                      <th scope="col">accion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {{--  @php($i = 1) --}}
+                    @foreach ($trachCat as $category )
+                        
+                  
+                    <tr>
+                      
+                          
+                      <th scope="row">{{$categories->firstItem()+$loop->index}}</th>
+                      <td>{{$category->category_name}}</td>
+                      <td>{{$category->user->name}}</td>
+                      <td>
+                        @if($category->created_at == NULL)
+                        <span class="text-danger">no hay datos en la base de datos</span>
+                        @else
+                        {{$category->created_at->diffForHumans()}}
+                        @endif
+                      </td>
+                      <td>
+                  <a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">editar</a>
+                  <a href="" class="btn btn-danger">eliminar</a>
+                </td>
+                   
+                    </tr>
+                    @endforeach
+
+                  </tbody>
+
+         
+                </table>
+                {{$trachCat->links()}}
+              </div>
+          </div>
+          <div class="col-md-4">
+              
+
+
+          </div>
+          </div>
+      </div>
+       {{--  FIN DE LA BASURA --}}
     </div>
 </x-app-layout>
