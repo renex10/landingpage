@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 use illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Redirect;
 
 class CategoryController extends Controller
 {
@@ -69,10 +70,26 @@ class CategoryController extends Controller
            'category_name' => $request->category_name,
            'user_id' =>Auth::user()->id       
         ]);
-        return redirect()->route('all.category')->with('exito','categoria actualizada');
+        return redirect()->route('all.category')->with('success','categoria actualizada');
       // $id->category_name= $request->category_name;
        
        //return redirect ()->route('all.category');
 
+    }
+
+    public function SoftDelete($id)
+    {
+         $delete = Category::find($id)->delete();
+         return Redirect()->back()->with('success','categoria eliminada exitosamente');
+    }
+
+    public function Restore($id){
+        $delete =  Category::withTrashed()->find($id)->restore();
+        return Redirect()->back()->with('success','categoria se ha restaurado exitosamente');
+    }
+
+    public function Pdelete($id){
+        $delete = Category::onlyTrashed()->find($id)->forceDelete();
+        return Redirect()->back()->with('success','categoria se ha eliminado permanentemente');
     }
 }

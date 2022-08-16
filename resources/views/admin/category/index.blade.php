@@ -55,7 +55,7 @@
                         </td>
                         <td>
                     <a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">editar</a>
-                    <a href="" class="btn btn-danger">eliminar</a>
+                    <a href="{{url('softdelete/category/'.$category->id)}}" class="btn btn-danger">eliminar</a>
                   </td>
                      
                       </tr>
@@ -152,8 +152,8 @@
                         @endif
                       </td>
                       <td>
-                  <a href="{{url('category/edit/'.$category->id)}}" class="btn btn-info">editar</a>
-                  <a href="" class="btn btn-danger">eliminar</a>
+                  <a href="{{url('category/restore/'.$category->id)}}" class="btn btn-info">restaurar</a>
+                  <a href="{{url('pdelete/category/'.$category->id)}}" class="btn btn-danger">eliminar p</a>
                 </td>
                    
                     </tr>
