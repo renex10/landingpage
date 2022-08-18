@@ -46,7 +46,7 @@
                         <th scope="row">{{$brands->firstItem()+$loop->index}}</th>
                        
                         <td>{{$brand->brand_name}}</td>
-                        <td><img src="" alt=""></td>
+                        <td><img src="{{asset($brand->brand_image)}}" style="height: 40px; width:70px" ></td>
                         <td>
                           @if($brand->created_at == NULL)
                           <span class="text-danger">no hay datos en la base de datos</span>
@@ -78,11 +78,11 @@
 
                     
 
-                    <form action="{{route('store.category')}}" method="POST">
+                    <form action="{{route('store.brand')}}" method="POST" enctype="multipart/form-data">
                       @csrf
                       <div class="form-group">
                         <label for="email">Nombre de la marca</label>
-                        <input type="text" name="brand_image" class="form-control" placeholder="ingrese la marca" id="email">
+                        <input type="text" name="brand_name" class="form-control" placeholder="ingrese la marca" id="email">
                         @error('brand_image')
                         <span class="text-danger">{{$message}}</span>
 
