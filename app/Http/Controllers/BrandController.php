@@ -127,4 +127,21 @@ class BrandController extends Controller
           
         
             }
+
+
+             /**========================================================================================= */
+                    #Eliminar
+    /**========================================================================================= */
+
+    public function Delete($id){
+        $image = Brand::find($id);
+        $old_image = $image->brand_image;
+        unlink($old_image);//eliminan las fotos que estan guardadas en el public desde la raiz
+        
+        Brand::find($id)->delete();
+        return redirect()->back()->with('sucess','marca eliminada  en la base de datos');
+
+    }
+
+
 }

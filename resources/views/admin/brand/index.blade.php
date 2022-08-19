@@ -56,7 +56,7 @@
                         </td>
                         <td>
                     <a href="{{url('brand/edit/'.$brand->id)}}" class="btn btn-info">editar</a>
-                    <a href="{{url('brand/delete/'.$brand->id)}}" class="btn btn-danger">eliminar</a>
+                    <a href="{{url('brand/delete/'.$brand->id)}}" onclick="return confirm('estas seguro que quieres eliminarlo')" class="btn btn-danger">eliminar</a>
                   </td>
                      
                       </tr>
