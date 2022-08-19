@@ -6,6 +6,13 @@
      
         </h2>
     </x-slot>
+    
+    @if(session('sucess'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>{{session('success')}}</strong> 
+    </div>
+@endif
 
     <div class="py-12">
         <div class="container">
@@ -19,10 +26,13 @@
                     </div>
                     <div class="card-body">
 
+
+
                     
 
                     <form action="{{url('brand/update/'.$brands->id)}}" method="POST" enctype="multipart/form-data">
                       @csrf
+
             <input type="hidden" name="old_image" value="{{$brands->brand_image}}">
                         <div class="form-group">
                           <label for="email">actulizar nombre de la marca</label>

@@ -71,5 +71,60 @@ class BrandController extends Controller
     /**========================================================================================= */
 
     public function Update(Request $request,$id){
+
+        
+        $validatedData = $request->validate([
+            'brand_name' => 'required|min:4',
+             
+              
+          ],
+          [
+              'brand_name.required' => 'porfavor ingresa el nombre de la marca',
+              'brand_image.min' => 'marca de mas de 4 caracteres',
+            
+          ]);
+         
+   
+          
+          $old_image= $request->old_image;//imagen antigua ya existente
+  
+           $brand_image = $request->file('brand_image');     //insertando imagen
+
+           if($brand_image){//si hay imagen se actualizara
+
+            $name_gen = hexdec(uniqid());//nombres de las imagenes que son unicas
+  
+            $img_ext = strtolower($brand_image->getClientOriginalExtension());//obteniendo lasextenciones
+   
+            $img_name = $name_gen.'.'.$img_ext;//combinando imagen con extension
+   
+            $up_location = 'image/brand/'; //localizacion
+   
+            $last_img = $up_location.$img_name; //guardando la imagen
+   
+            $brand_image->move($up_location,$img_name);//moviendo la imagen
+ 
+            unlink($old_image);//elimina imagen ya existente
+   
+            Brand::find($id)->Update([//actualizando nueva imagen
+                'brand_name'=>$request->brand_name,
+                'brand_image'=>$last_img,
+                'created_at'=>Carbon::now()
+            ]);
+   
+            return redirect()->back()->with('sucess','marca actualizada  en la base de datos');
+
+           }else{
+
+            Brand::find($id)->Update([//actualizando nueva imagen
+                'brand_name'=>$request->brand_name,
+                'created_at'=>Carbon::now()
+            ]);
+            return redirect()->back()->with('sucess','marca actualizada  en la base de datos');
+
+           }
+           
+          
+        
             }
 }
