@@ -25,6 +25,10 @@
                      <x-jet-nav-link href="{{route('all.brand')}}">
                           marca
                      </x-jet-nav-link>
+
+                      <x-jet-nav-link href="{{route('multi.image')}}">
+                          Multi Imagenes
+                     </x-jet-nav-link>
                 </div>
 
                
