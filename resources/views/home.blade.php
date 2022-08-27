@@ -23,9 +23,10 @@
             <div class="col-lg-12">
 
                 <!-- Card -->
+                @foreach ($brands as $brand)
                 <div class="card">
                     <div class="card-image">
-                        <img class="img-fluid" src={{asset('fontend/images/description-1.png')}} alt="alternative">
+                        <img class="img-fluid" src={{$brand->brand_image}} alt="alternative">
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">Lists Builder</h4>
@@ -33,31 +34,10 @@
                     </div>
                 </div>
                 <!-- end of card -->
+                @endforeach
+                
 
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img class="img-fluid" src=     "{{asset('fontend/images/description-2.png')}}""" alt="alternative">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Campaign Tracker</h4>
-                        <p>Campaigns is a feature we've developed since the beginning because it's at the core of Tivo's functionalities</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
-                <!-- Card -->
-                <div class="card">
-                    <div class="card-image">
-                        <img class="img-fluid" src= "{{asset('fontend/images/description-3.png')}}" alt="alternative">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Analytics Tool</h4>
-                        <p>Tivo collects customer data in order to help you analyse different situations and take required action</p>
-                    </div>
-                </div>
-                <!-- end of card -->
-
+               
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
