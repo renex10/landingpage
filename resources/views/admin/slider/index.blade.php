@@ -24,15 +24,16 @@
                  <table class="table table-dark">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Titulo del Slides</th>
-                        <th scope="col">Descripcion</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">accion</th>
+                        <th scope="col" with="5%">#</th>
+                        <th scope="col" with="15%">Titulo del Slides</th>
+                        <th scope="col" with="25%">Descripcion</th>
+                        <th scope="col" with="15%">Image</th>
+                        <th scope="col" with="15%">accion</th>
                       </tr>
                     </thead>
                     <tbody>
                      {{--  @php($i = 1) --}}
+                      @php($i = 1)
                       @foreach ($sliders as $slider )
                           
                     
@@ -40,7 +41,7 @@
                         
                             
                        {{--  <th scope="row">{{$brands->firstItem()+$loop->index}}</th> --}}
-                       
+                        <th scope="row">{{$i++}}</th>
                         <td>{{$slider->title}}</td>
                         <td>{{$slider->description}}</td>
                         <td><img src="{{asset($slider->image)}}" style="height: 40px; width:70px" ></td>

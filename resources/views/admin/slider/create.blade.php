@@ -8,7 +8,8 @@
 			</div>
 
 			<div class="card-body">
-				<form>
+				<form action="{{route('store.slider')}}" method="POST" enctype="multipart/form-data">
+					@csrf
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Titulo del slider</label>
 						<input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Titulo del Slider">
