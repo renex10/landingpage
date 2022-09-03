@@ -46,44 +46,47 @@ class HomeController extends Controller
         return view('admin.slider.edit',compact('sliders'));
    }
 
-   public function Update(Request $request){
+   public function Update(Request $request,$id){
     
     $validatedData = $request->validate([
-        'brand_name' => 'required|min:4',
+        'title' => 'required|min:4',
+        'description' => 'required|min:4',
          
           
       ],
       [
-          'brand_name.required' => 'porfavor ingresa el nombre de la marca',
-          'brand_image.min' => 'marca de mas de 4 caracteres',
+          'title.required' => 'porfavor ingresa el nombre de la marca',
+          'description.min' => 'marca de mas de 4 caracteres',
         
       ]);
      
 
       
-      $old_image= $request->old_image;//imagen antigua ya existente
+      $old_image = $request->old_image;//imagen antigua ya existente
 
-       $brand_image = $request->file('brand_image');     //insertando imagen
 
-       if($brand_image){//si hay imagen se actualizara
+       $slider = $request->file('image');     //insertando imagen
+
+       if($slider){//si hay imagen se actualizara
 
         $name_gen = hexdec(uniqid());//nombres de las imagenes que son unicas
 
-        $img_ext = strtolower($brand_image->getClientOriginalExtension());//obteniendo lasextenciones
+        $img_ext = strtolower($slider->getClientOriginalExtension());//obteniendo lasextenciones
 
         $img_name = $name_gen.'.'.$img_ext;//combinando imagen con extension
 
-        $up_location = 'image/brand/'; //localizacion
+        $up_location = 'image/slider/'; //localizacion
 
         $last_img = $up_location.$img_name; //guardando la imagen
 
-        $brand_image->move($up_location,$img_name);//moviendo la imagen
+        $slider->move($up_location,$img_name);//moviendo la imagen
 
         unlink($old_image);//elimina imagen ya existente
 
-        Brand::find($id)->Update([//actualizando nueva imagen
-            'brand_name'=>$request->brand_name,
-            'brand_image'=>$last_img,
+        Slider::find($id)->Update([//actualizando nueva imagen
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'image'=>$last_img,
             'created_at'=>Carbon::now()
         ]);
 
@@ -91,15 +94,27 @@ class HomeController extends Controller
 
        }else{
 
-        Brand::find($id)->Update([//actualizando nueva imagen
-            'brand_name'=>$request->brand_name,
+        Slider::find($id)->Update([//actualizando nueva imagen
+            'title'=>$request->title,
+            'description'=>$request->description,
             'created_at'=>Carbon::now()
         ]);
-        return redirect()->back()->with('sucess','marca actualizada  en la base de datos');
+        return redirect()->back()->with('sucess','slider actualizada  en la base de datos');
 
        }
        
 
    }
+
+   public function Delete($id){
+    $image = Slider::find($id);
+    $old_image = $image->image;
+    unlink($old_image);//eliminan las fotos que estan guardadas en el public desde la raiz
+    
+    Slider::find($id)->delete();//elimina la direccion desde la base de datos
+    return redirect()->back()->with('sucess','slider eliminada  en la base de datos');
+
+}
+
 
 }

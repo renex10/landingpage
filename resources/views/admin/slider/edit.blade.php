@@ -27,21 +27,37 @@
                     <form action="{{url('slider/update/'.$sliders->id)}}" method="POST" enctype="multipart/form-data">
                       @csrf
 
-            <input type="hidden" name="old_image" value="{{$sliders->image}}">
+                      <input type="hidden" name="old_image" value="{{$sliders->image}}">
+            
+        
+
+
                         <div class="form-group">
-                          <label for="email">actulizar nombre de la marca</label>
-                          <input type="text" name="slider" class="form-control" placeholder="ingrese nombre" id="email" value="{{$sliders->description}}">
-                          @error('brand_name')
+                          <label for="email">actulizar  titulo</label>
+                          <input type="text" name="title" class="form-control" placeholder="ingrese nombre" id="email" value="{{$sliders->title}}">
+                         
+                          @error('title')
                           <span class="text-danger">{{$message}}</span>
 
-                          @enderror
+                         @enderror
+                        </div>
+
+
+                        <div class="form-group">
+                          <label for="email">actulizar Descripcion</label>
+                          <input type="text" name="description" class="form-control" placeholder="ingrese nombre" id="email" value="{{$sliders->description}}">
+                         
+                          @error('description')
+                          <span class="text-danger">{{$message}}</span>
+
+                         @enderror
                         </div>
 
 
                         <div class="form-group">
                             <label for="email">actulizar imagen de la marca</label>
-                            <input type="file" name="brand_image" class="form-control"  id="email" value="{{$sliders->image}}">
-                            @error('brand_image')
+                            <input type="file" name="image" class="form-control"  id="email" value="{{$sliders->image}}">
+                            @error('image')
                             <span class="text-danger">{{$message}}</span>
   
                             @enderror

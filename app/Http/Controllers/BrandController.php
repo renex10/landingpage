@@ -103,7 +103,7 @@ class BrandController extends Controller
          
    
           
-          $old_image= $request->old_image;//imagen antigua ya existente
+          $old_image = $request->old_image;//imagen antigua ya existente
   
            $brand_image = $request->file('brand_image');     //insertando imagen
 
