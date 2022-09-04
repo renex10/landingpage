@@ -32,4 +32,14 @@ class AboutController extends Controller
 
           return view('admin.home.edit',compact('homeabout'));
     } 
+    public function UpdateAbout(Request $request, $id){
+       $update = HomeAbout::find($id)->update([
+            'title' => $request->title,
+            'long_dist' => $request->long_dist,
+
+
+        ]);
+        return Redirect()->route('home.about')->with('success','Acerca de Nosotros Insertado se actualizo con exito');
+
+    }
 }

@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="card-body">
-				<form action="{{route('store.about')}}" method="POST" >
+				<form action="{{url('update/homeabout/'.$homeabout->id)}}" method="POST" >
 					@csrf
 					<div class="form-group">
 						<label for="exampleFormControlInput1">Titulo de Acerca de Nostros</label>
