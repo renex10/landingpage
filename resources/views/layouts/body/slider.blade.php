@@ -9,24 +9,13 @@
                 <div class="slider-container">
                     <div class="swiper-container image-slider">
                         <div class="swiper-wrapper">
+                            @foreach ($images as $image )
                             <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-1.png')}}"  alt="alternative">
-                            </div>
-                            <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-2.png')}}"  alt="alternative">
-                            </div>
-                            <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-3.png')}}"  alt="alternative">
-                            </div>
-                            <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-4.png')}}"  alt="alternative">
-                            </div>
-                            <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-5.png')}}"  alt="alternative">
-                            </div>
-                            <div class="swiper-slide">
-                                    <img class="img-fluid" src= "{{asset('fontend/images/customer-logo-6.png')}}"  alt="alternative">
-                            </div>
+                                <img class="img-fluid" src= "{{$image->image}}"  alt="alternative">
+                        </div>
+                            @endforeach
+                            
+                           
                         </div> <!-- end of swiper-wrapper -->
                     </div> <!-- end of swiper container -->
                 </div> <!-- end of slider-container -->

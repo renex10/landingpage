@@ -7,7 +7,8 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Brand;
-
+use App\Models\HomeAbout;
+use App\Models\Multipic;
 use App\Models\User;
 
 Route::get('/email/verify', function () {
@@ -28,7 +29,10 @@ Route::get('/email/verify', function () {
 Route::get('/', function () {
     //$brands = DB::table('brands')->get();
     $brands = Brand::all();
-    return view('home',compact('brands'));
+    $abouts =  HomeAbout::first();
+    $images = Multipic::all();
+    //$abouts= DB::table('home_abouts')->first();
+    return view('home',compact('brands','abouts','images'));
 });
 //categoria controller
 
@@ -69,7 +73,7 @@ Route::get('/add/about',[AboutController::class,'AddAbout'])->name('add.about');
 Route::post('/store/about',[AboutController::class,'StoreAbout'])->name('store.about');
 Route::get('/about/edit/{id}',[AboutController::class,'EditAbout']);
 Route::post('/update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
-//Route::get('/about/delete/{id}',[AboutController::class,'DeleteAbout']);
+Route::get('/about/delete/{id}',[AboutController::class,'DeleteAbout']);
 
 
 

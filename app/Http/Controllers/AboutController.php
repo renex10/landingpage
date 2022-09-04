@@ -42,4 +42,9 @@ class AboutController extends Controller
         return Redirect()->route('home.about')->with('success','Acerca de Nosotros Insertado se actualizo con exito');
 
     }
+    public function DeleteAbout($id){
+        $delete= HomeAbout::find($id)->Delete();
+
+        return Redirect()->back()->with('success','Acerca de Nosotros Insertado se ha Eliminado de la Base de Datos');
+    }
 }

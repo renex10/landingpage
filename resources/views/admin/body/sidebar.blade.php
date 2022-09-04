@@ -46,6 +46,12 @@
                   </a>
                 </li>
 
+                <li class="active">
+                  <a class="sidenav-item-link" href="{{route('multi.image')}}">
+                    <span class="nav-text">MULTI IMAGENES</span>
+                  </a>
+                </li>
+
 
                 <li class="active">
                   <a class="sidenav-item-link" href="index.html">
