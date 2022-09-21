@@ -1,394 +1,188 @@
 @extends('layouts.master_home')
 @section('home_content')
-
-
-
-
-
-<!-- Customers -->
-<!-- end of slider-1 -->
-<!-- end of customers -->
-
-
-<!-- Description -->
-<div class="cards-1">
+<div class="main-banner wow fadeIn" id="top" data-wow-duration="1s" data-wow-delay="0.5s">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="above-heading">DESCRIPTION</div>
-                <h2 class="h2-heading">Marketing Automation Will Bring More Qualified Leads</h2>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            <div class="col-lg-12">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-lg-6 align-self-center">
+              <div class="left-content header-text wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+            
+                <h6>{{$abouts->title}}</h6>
+                <h2>  Encontraras aquí <em>la asesoría</em> &amp; <span>  necesaria para que tu emprendimiento</span>  llegue a cada rincón del mundo </h2>
+        
+            
+            
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                <img src="fontend/assets/images/banner-right-image.png" alt="team meeting">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                <!-- Card -->
-                @foreach ($brands as $brand)
-                <div class="card">
-                    <div class="card-image">
-                        <img class="img-fluid" src={{$brand->brand_image}} alt="alternative">
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">Lists Builder</h4>
-                        <p>It's very easy to start creating email lists for your marketing actions. Just create your Tivo account</p>
-                    </div>
+<!--acerca de nosotros-->
+
+<div class="aviso  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s"">
+  <p class="aviso-1">
+    
+    Hacemos que tu sitio web sea posicionado dentro los rangos de búsqueda,
+     no importa el buscador tu sitio será visible para tus potenciales clientes
+
+  </p>
+</div>
+  <div id="portfolio" class="our-portfolio section">
+    <div class="container">
+
+    
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+          <div class="section-heading  wow bounceIn" data-wow-duration="1s" data-wow-delay="0.2s">
+            <h2>Lo que podemos <em>hacer por ti </em>con nuestro <span> potencial </span></h2>
+          </div>
+        </div>
+     
+      </div>
+      <div class="row">
+        <div>
+          <h2 class="col-lg-6 offset-lg-3"> ¿Que tienes en mente? cuéntanos, podemos hacerlo realidad</h2>
+        </div>
+       
+        <div class="col-lg-3 col-sm-6">
+         
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.3s">
+              <div class="hidden-content">
+                <h4>Optimización </h4>
+                <p>Paginas livianas que harán que tus clientes se sientan cómodos navegando por tu sitio.</p>
+              </div>
+              <div class="showed-content">
+                <img src="fontend/assets/images/optimizacion-tuwebenlinea.png" alt="optimizamos tu web">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+              <div class="hidden-content">
+                <h4>Control total</h4>
+                <p>Paginas dinámicas, podrás tener control total del contenido que subas.</p>
+              </div>
+              <div class="showed-content">
+                <img src="fontend/assets/images/control-total-tuwebenlinea.png" alt="control total de tus contenidos">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <div class="hidden-content">
+                <h4>Asesoría </h4>
+                <p>Asesorías de diseño grafico para que crear tus contenidos con información de tu empresa</p>
+              </div>
+              <div class="showed-content">
+                <img src="fontend/assets/images/apoyo.png" alt="asesoria en tu web en linea">
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <a href="#">
+            <div class="item wow bounceInUp" data-wow-duration="1s" data-wow-delay="0.6s">
+              <div class="hidden-content">
+                <h4>Diseño</h4>
+                <p>Contamos con plataformas digitales para tu empresa o institución que requieran mas control para tu empresa.</p>
+              </div>
+              <div class="showed-content">
+                <img src="fontend/assets/images/disenador-tuwebenlinea.png" alt="">
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- <div id="blog" class="our-blog section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="section-heading">
+            <h2>Check Out What Is <em>Trending</em> In Our Latest <span>News</span></h2>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="top-dec">
+            <img src="fontend/assets/images/blog-dec.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="left-image">
+            <a href="#"><img src="fontend/assets/images/big-blog-thumb.jpg" alt="Workspace Desktop"></a>
+            <div class="info">
+              <div class="inner-content">
+                <ul>
+                  <li><i class="fa fa-calendar"></i> 24 Mar 2021</li>
+                  <li><i class="fa fa-users"></i> TemplateMo</li>
+                  <li><i class="fa fa-folder"></i> Branding</li>
+                </ul>
+                <a href="#"><h4>SEO Agency &amp; Digital Marketing</h4></a>
+                <p>Lorem ipsum dolor sit amet, consectetur and sed doer ket eismod tempor incididunt ut labore et dolore magna...</p>
+                <div class="main-blue-button">
+                  <a href="#">Discover More</a>
                 </div>
-                <!-- end of card -->
-                @endforeach
-                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.25s">
+          <div class="right-list">
+            <ul>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 18 Mar 2021</span>
+                  <a href="#"><h4>New Websites &amp; Backlinks</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="fontend/assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 14 Mar 2021</span>
+                  <a href="#"><h4>SEO Analysis &amp; Content Ideas</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+              <li>
+                <div class="left-content align-self-center">
+                  <span><i class="fa fa-calendar"></i> 06 Mar 2021</span>
+                  <a href="#"><h4>SEO Tips &amp; Digital Marketing</h4></a>
+                  <p>Lorem ipsum dolor sit amsecteturii and sed doer ket eismod...</p>
+                </div>
+                <div class="right-image">
+                  <a href="#"><img src="fontend/assets/images/blog-thumb-01.jpg" alt=""></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> --}}
 
-               
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of cards-1 -->
-<!-- end of description -->
-
-
-<!-- Features -->
-<div id="features" class="tabs">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="above-heading">FEATURES</div>
-                <h2 class="h2-heading">Marketing Automation</h2>
-                <p class="p-heading">Take your business strategy to the next level and automatize your marketing tasks to save time for product development. Tivo can provide results in less than 2 weeks</p>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Tabs Links -->
-                <ul class="nav nav-tabs" id="argoTabs" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="nav-tab-1" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true"><i class="fas fa-list"></i>List Builder</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-tab-2" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false"><i class="fas fa-envelope-open-text"></i>Campaigns</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="nav-tab-3" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false"><i class="fas fa-chart-bar"></i>Analytics</a>
-                    </li>
-                </ul>
-                <!-- end of tabs links -->
-
-                <!-- Tabs Content -->
-                <div class="tab-content" id="argoTabsContent">
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="{{asset('fontend/images/features-1.png')}}"  alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6">
-                                <div class="text-container">
-                                    <h3>List Building Is Easier Than Ever</h3>
-                                    <p>It's very easy to start using Tivo. You just need to fill out and submit the <a class="blue page-scroll" href="sign-up.html">Sign Up Form</a> and you will receive access to the app and all of its features in no more than 24h.</p>
-                                    <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Create and embed on websites newsletter sign up forms</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Manage forms and landing pages for your services</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Add and remove subscribers using the control panel</div>
-                                        </li>
-                                    </ul>
-                                    <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-1">LIGHTBOX</a>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="image-container">
-                                    <img class="img-fluid" src="{{asset('fontend/images/features-2.png')}}" alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6">
-                                <div class="text-container">
-                                    <h3>Campaigns Monitoring Tools</h3>
-                                    <p>Campaigns monitoring is a feature we've developed since the beginning because it's at the core of Tivo and basically to any marketing activity focused on results.</p>
-                                    <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Easily plan campaigns and schedule their starting date</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Start campaigns and follow their evolution closely</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Evaluate campaign results and optimize future actions</div>
-                                        </li>
-                                    </ul>
-                                    <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-2">LIGHTBOX</a>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-
-                    <!-- Tab -->
-                    <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="image-container">
-                                    <img class="img-fluid" src=    {{asset("fontend/images/features-3.png")}} alt="alternative">
-                                </div> <!-- end of image-container -->
-                            </div> <!-- end of col -->
-                            <div class="col-lg-6">
-                                <div class="text-container">
-                                    <h3>Analytics Control Panel</h3>
-                                    <p>Analytics control  panel is important for every marketing team so it's beed implemented from the begging and designed to produce reports based on very little input information.</p>
-                                    <ul class="list-unstyled li-space-lg">
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">If you set it up correctly you will get acces to great intel</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">Easy to integrate in your websites and landing pages</div>
-                                        </li>
-                                        <li class="media">
-                                            <i class="fas fa-square"></i>
-                                            <div class="media-body">The generated reports are important for your strategy</div>
-                                        </li>
-                                    </ul>
-                                    <a class="btn-solid-reg popup-with-move-anim" href="#details-lightbox-3">LIGHTBOX</a>
-                                </div> <!-- end of text-container -->
-                            </div> <!-- end of col -->
-                        </div> <!-- end of row -->
-                    </div> <!-- end of tab-pane -->
-                    <!-- end of tab -->
-                    
-                </div> <!-- end of tab content -->
-                <!-- end of tabs content -->
-
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of tabs -->
-<!-- end of features -->
-
-
-<!-- Details Lightboxes -->
-<!-- Details Lightbox 1 -->
-<div id="details-lightbox-1" class="lightbox-basic zoom-anim-dialog mfp-hide">
-    <div class="container">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <div class="col-lg-8">
-                <div class="image-container">
-                    <img class="img-fluid" src=  "{{asset('fontend/images/details-lightbox.png')}}" alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <h3>List Building</h3>
-                <hr>
-                <h5>Core service</h5>
-                <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
-                <ul class="list-unstyled li-space-lg">
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">List building framework</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">User administration</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
-                    </li>
-                </ul>
-                <a class="btn-solid-reg mfp-close" href="sign-up.html">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of lightbox-basic -->
-<!-- end of details lightbox 1 -->
-
-<!-- Details Lightbox 2 -->
-<div id="details-lightbox-2" class="lightbox-basic zoom-anim-dialog mfp-hide">
-    <div class="container">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <div class="col-lg-8">
-                <div class="image-container">
-                    <img class="img-fluid" src=    "{{asset('fontend/images/details-lightbox.png')}}" alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <h3>Campaign Monitoring</h3>
-                <hr>
-                <h5>Core service</h5>
-                <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
-                <ul class="list-unstyled li-space-lg">
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">List building framework</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">User administration</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
-                    </li>
-                </ul>
-                <a class="btn-solid-reg mfp-close" href="sign-up.html">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of lightbox-basic -->
-<!-- end of details lightbox 2 -->
-
-<!-- Details Lightbox 3 -->
-<div id="details-lightbox-3" class="lightbox-basic zoom-anim-dialog mfp-hide">
-    <div class="container">
-        <div class="row">
-            <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-            <div class="col-lg-8">
-                <div class="image-container">
-                    <img class="img-fluid" src=    {{asset('fontend/images/details-lightbox.png')}} alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-4">
-                <h3>Analytics Tools</h3>
-                <hr>
-                <h5>Core service</h5>
-                <p>It's very easy to start using Tivo. You just need to fill out and submit the Sign Up Form and you will receive access to the app.</p>
-                <ul class="list-unstyled li-space-lg">
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">List building framework</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Easy database browsing</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">User administration</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Automate user signup</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Quick formatting tools</div>
-                    </li>
-                    <li class="media">
-                        <i class="fas fa-square"></i><div class="media-body">Fast email checking</div>
-                    </li>
-                </ul>
-                <a class="btn-solid-reg mfp-close" href="sign-up.html">SIGN UP</a> <a class="btn-outline-reg mfp-close as-button" href="#screenshots">BACK</a>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of lightbox-basic -->
-<!-- end of details lightbox 3 -->
-<!-- end of details lightboxes -->
-
-
-<!-- Details -->
-<div id="details" class="basic-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="text-container">
-                    <h2>Now Is The Time To Upgrade Your Marketing Solution</h2>
-                    <p>Target the right customers for your business with the help of Tivo's patented segmentation technology and deploy efficient marketing campaigns. Keep your customers happy and loyal.</p>
-                    <ul class="list-unstyled li-space-lg">
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Understand customers and meet their requirements</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-square"></i>
-                            <div class="media-body">Targeted client base with Tivo's efficient technology</div>
-                        </li>
-                    </ul>
-                    <a class="btn-solid-reg page-scroll" href="sign-up.html">SIGN UP</a>
-                </div> <!-- end of text-container -->
-            </div> <!-- end of col -->
-            <div class="col-lg-6">
-                <div class="image-container">
-                    <img class="img-fluid" src=    {{asset('images/details.png')}} alt="alternative">
-                </div> <!-- end of image-container -->
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-1 -->
-<!-- end of details -->
-
-
-<!-- Video -->
-<div id="video" class="basic-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-
-                <!-- Video Preview -->
-                <div class="image-container">
-                    <div class="video-wrapper">
-                        <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
-                            <img class="img-fluid" src=    "{{asset('fontend/images/video-image.png')}}" alt="alternative">
-                            <span class="video-play-button">
-                                <span></span>
-                            </span>
-                        </a>
-                    </div> <!-- end of video-wrapper -->
-                </div> <!-- end of image-container -->
-                <!-- end of video preview -->
-
-                <div class="p-heading">What better way to show off Tivo marketing automation saas app than presenting you some great situations of each module and tool available to users in a video</div>        
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of basic-2 -->
-<!-- end of video -->
-
-
-<!-- Pricing -->
-
-<!-- end of pricing -->
-
-
-<!-- Testimonials -->
-
-
-<!-- end of slider-2 -->
-<!-- end of testimonials -->
-
-
-<!-- Newsletter -->
- <!-- end of form -->
-<!-- end of newsletter -->
-
-
-
-
+  
 @endsection

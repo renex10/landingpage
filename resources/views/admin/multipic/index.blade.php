@@ -19,7 +19,10 @@
 
                         </div>
                     @endforeach
+
+                    
                 </div>
+                {{$images->onEachSide(4)->links()}} 
          
             </div>
             <div class="col-md-4">

@@ -1,147 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8">
+
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    {{-- <link rel="preconnect" href="https://fonts.gstatic.com"> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+
+
+    <title>tu web en linea</title>
+
+    <!-- Bootstrap core CSS -->
+    {{-- <link href={{asset('fontend/vendor/bootstrap/css/bootstrap.min.css')}} rel="stylesheet"> --}}
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href={{ asset('fontend/assets/css/miscambios.css') }}>
+
+    {{-- <link rel="stylesheet" href={{asset('fontend/assets/css/fontawesome.css')}}> --}}
+    <link rel="stylesheet" href={{ asset('fontend/assets/css/templatemo-space-dynamic.css') }}>
+    <link rel="stylesheet" href={{ asset('fontend/assets/css/animated.css') }}>
+    <link rel="stylesheet" href={{ asset('fontend/assets/css/owl.css') }}>
+    {
+    <script src="https://kit.fontawesome.com/b4c1652db4.js" crossorigin="anonymous"></script>
+
+    <!--
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Tivo is a HTML landing page template built with Bootstrap to help you crate engaging presentations for SaaS apps and convert visitors into users.">
-    <meta name="author" content="Inovatik">
+TemplateMo 562 Space Dynamic
 
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
+https://templatemo.com/tm-562-space-dynamic
 
-    <!-- Website Title -->
-    <title>Tivo - SaaS App HTML Landing Page Template</title>
-    
-    <!-- Styles -->
+-->
+    =
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href=  "{{asset('fontend/css/bootstrap.css')}}" rel="stylesheet">
-    <link href=  "{{asset('fontend/css/fontawesome-all.css')}}" rel="stylesheet">
-    <link href=  "{{asset('fontend/css/swiper.css')}}" rel="stylesheet">
-	<link href=  "{{asset('fontend/css/magnific-popup.css')}}" rel="stylesheet">
-	<link href=  "{{asset('fontend/css/styles.css')}}" rel="stylesheet">
-	
-	<!-- Favicon  -->
-    <link rel="icon" href= "{{asset('fontend/images/favicon.png')}}">
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Preloader -->
-	<div class="spinner-wrapper">
-        <div class="spinner">
-            <div class="bounce1"></div>
-            <div class="bounce2"></div>
-            <div class="bounce3"></div>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
-    <!-- end of preloader -->
-    
+    <!-- ***** Preloader End ***** -->
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
-        <div class="container">
-
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
-
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="{{asset('fontend/images/logo.svg')}}" alt="alternative"></a> 
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-awesome fas fa-bars"></span>
-                <span class="navbar-toggler-awesome fas fa-times"></span>
-            </button>
-            <!-- end of mobile menu toggle button -->
-
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#header">INICIO <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#features">FEATURES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#details">DETAILS</a>
-                    </li>
-
-                    <!-- Dropdown Menu -->          
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle page-scroll" href="#video" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">VIDEO</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="article-details.html"><span class="item-text">ARTICLE DETAILS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="terms-conditions.html"><span class="item-text">TERMS CONDITIONS</span></a>
-                            <div class="dropdown-items-divide-hr"></div>
-                            <a class="dropdown-item" href="privacy-policy.html"><span class="item-text">PRIVACY POLICY</span></a>
-                        </div>
-                    </li>
-                    <!-- end of dropdown menu -->
-
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="#pricing">PRICING</a>
-                    </li>
-                </ul>
-                <span class="nav-item">
-                    <a class="btn-outline-sm" href="{{ route('login') }}">LOG IN</a>
-                </span>
-            </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
-
-
-    <!-- Header -->
-    @include('layouts.body.header')
-    <!-- end of header -->
-
-     <!-- slider-1 -->
-    @include('layouts.body.slider')
-
-
-    <!-- end of slider-1 -->
-
-    @yield('home_content')
-    <!-- end of footer -->
-
-    @include('layouts.body.cards')
-    @include('layouts.body.testimonials')
-
-    @include('layouts.body.form')
-
-    @include('layouts.body.footer')
-
-
-    <!-- Copyright -->
-    <div class="copyright">
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
-                    <p class="p-small">Copyright © 2020 <a href="https://inovatik.com">Template by Inovatik</a></p>
-                </div> <!-- end of col -->
-            </div> <!-- enf of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of copyright --> 
-    <!-- end of copyright -->
-    
-    	
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="index.html" class="logo">
+                            <h4>Spac<span>Dyna</span></h4>
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="{{ route('home') }}" class="active">inicio</a></li>
+                            <li class="scroll-to-section"><a href="{{ route('planes') }}">planes</a></li>
+                            <li class="scroll-to-section"><a href="{{ route('servicios') }}">servicios</a></li>
+                            {{-- <li class="scroll-to-section"><a href="#portfolio">diseños</a></li> --}}
+                            {{-- <li class="scroll-to-section"><a href="#blog">Blog</a></li> --}}
+                            {{-- <li class="scroll-to-section"><a href="{{route('contact')}}">mensajeanos</a></li> --}}
+                            <li class="scroll-to-section">
+                                <div class="main-red-button"><a href="{{ route('contacto') }}">Contacto</a></div>
+                            </li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+    <!-----contenido------->
+    @yield('home_content')
+    <!-----fin-contenido------->
+    <section class="main">
+        <div class="fab-btns">
+            <div class="fab-btn">
+                <i class="fab fa-facebook-f"></i>
+
+            </div>
+
+            <div class="fab-btn">
+                <i class="fab fa-twitter"></i>
+
+            </div>
+
+            <div class="fab-btn">
+               <a href=""><i class="fab fa-whatsapp"></i></a> 
+
+            </div>
+
+           
+
+        </div>
+
+        <div class="fab-btn" id="fab">
+          <i class="fas fa-plus"></i>
+
+      </div>
+
+
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.25s">
+                    <p>© todos los derechos reservados miweb en linea 2022 </p>
+
+
+                </div>
+            </div>
+        </div>
+    </footer>
     <!-- Scripts -->
-    <script src="{{asset('fontend/js/jquery.min.js')}}"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="{{asset('fontend/js/popper.min.js')}}"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="{{asset('fontend/js/bootstrap.min.js')}}"></script> <!-- Bootstrap framework -->
-    <script src="{{asset('fontend/js/jquery.easing.min.js')}}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{asset('fontend/js/swiper.min.js')}}"></script> <!-- Swiper for image and text sliders -->
-    <script src="{{asset('fontend/js/jquery.magnific-popup.js')}}"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="{{asset('fontend/js/validator.min.js')}}"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="{{asset('fontend/js/scripts.js')}}"></script> <!-- Custom scripts -->
+    <script src={{ asset('fontend/vendor/jquery/jquery.min.js') }}></script>
+    {{-- <script src={{asset('fontend/vendor/bootstrap/js/bootstrap.bundle.min.js')}}></script> --}}
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+    <script src={{ asset('fontend/assets/js/owl-carousel.js') }}></script>
+    <script src={{ asset('fontend/assets/js/animation.js') }}></script>
+    <script src={{ asset('fontend/assets/js/imagesloaded.js') }}></script>
+    <script src={{ asset('fontend/assets/js/templatemo-custom.js') }}></script>
+    <script src={{ asset('fontend/assets/js/app.js') }}></script>
+
+
 </body>
+
 </html>

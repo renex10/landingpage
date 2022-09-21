@@ -3,10 +3,12 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Brand;
+use App\Models\Contact;
 use App\Models\HomeAbout;
 use App\Models\Multipic;
 use App\Models\User;
@@ -31,9 +33,36 @@ Route::get('/', function () {
     $brands = Brand::all();
     $abouts =  HomeAbout::first();
     $images = Multipic::all();
+
     //$abouts= DB::table('home_abouts')->first();
     return view('home',compact('brands','abouts','images'));
-});
+
+})->name('home');
+
+Route::get('/contacto', function() {
+    return view('pages.contacto');
+})->name('contacto');
+
+Route::get('/servicios', function() {
+    return view('servicios');
+})->name('servicios');
+
+Route::get('/planes', function() {
+    return view('planes');
+})->name('planes');
+
+Route::get('/nosotros', function() {
+    return view('nosotros');
+})->name('nosotros');
+
+/* Route::get('/contacto', function() {
+    return view('contacto');
+})->name('contacto'); */
+
+/* Route::view('/contacto','contacto')->name('contacto'); */
+Route::view('/nosotros','acerca-de-nosotros')->name('nosotros');
+Route::view('/servicios','servicios')->name('servicios');
+
 //categoria controller
 
 Route::get('/category/all',[CategoryController::class,'AllCat'])->name('all.category');
@@ -74,6 +103,24 @@ Route::post('/store/about',[AboutController::class,'StoreAbout'])->name('store.a
 Route::get('/about/edit/{id}',[AboutController::class,'EditAbout']);
 Route::post('/update/homeabout/{id}',[AboutController::class,'UpdateAbout']);
 Route::get('/about/delete/{id}',[AboutController::class,'DeleteAbout']);
+
+
+//ruta pagina contacto
+/* Route::get('/contacto',[AboutController::class,'Contacto'])->name('contacto');  */
+
+//Admin Contact Page Route
+Route::get('/admin/contact',[ContactController::class,'AdminContact'])->name('admin.contact');
+Route::get('/admin/add/contact',[ContactController::class,'AdminAddContact'])->name('add.contact');
+Route::post('/admin/store/contact',[ContactController::class,'AdminStoreContact'])->name('store.contact');
+Route::get('/admin/add/message',[ContactController::class,'AdminMessage'])->name('admin.message');
+
+
+///HOME Contact Page
+Route::get('/contact',[ContactController::class,'Contact'])->name('contact');
+Route::post('/contact/form',[ContactController::class,'ContactForm'])->name('contact.form');
+
+
+
 
 
 

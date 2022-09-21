@@ -164,7 +164,8 @@ class BrandController extends Controller
     ////this is for Multi Image all method
  public function Multipic(){
      //cargar la pagina
-     $images = Multipic::all();
+     //$images = Multipic::all();
+     $images = Multipic::latest()->paginate(6);
 
      return view('admin.multipic.index',compact('images'));
 

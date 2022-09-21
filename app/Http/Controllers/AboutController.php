@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomeAbout;
+use App\Models\Multipic;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Redirect;
 
@@ -19,6 +20,7 @@ class AboutController extends Controller
     public function StoreAbout(Request $request){
         HomeAbout::insert([
             'title' => $request->title,
+            'short_dist' => $request->title,
             'long_dist' => $request->long_dist,
             'created_at' => Carbon::now()
 
@@ -46,5 +48,7 @@ class AboutController extends Controller
         $delete= HomeAbout::find($id)->Delete();
 
         return Redirect()->back()->with('success','Acerca de Nosotros Insertado se ha Eliminado de la Base de Datos');
-    }
+    }  
+    
+
 }
